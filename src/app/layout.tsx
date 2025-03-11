@@ -27,17 +27,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen grid grid-rows-[1, 1fr]`}
       >
         <nav>
-          <ul>
+          <ul className="flex flex-row justify-between items-center m-5">
             <li><Link href={"/"}>Home</Link></li>
             <li><Link href={"/champions"}>Champions</Link></li>
             <li><Link href={"/items"}>Items</Link></li>
             <li><Link href={"/rotation"}>Rotation</Link></li>
           </ul>
         </nav>
+        <div className="min-h-screen w-full flex justify-center items-center">
         {children}
+        </div>
       </body>
     </html>
   );
