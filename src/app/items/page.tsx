@@ -2,6 +2,7 @@
 // import type {CardProps} from "../components/card";
 import type { Champion } from "../types/Champion";
 import Image from "next/image";
+import { RiotImageLink } from "../components/imageLink";
 
 export default async function itemPage () {
   const res = await fetch("https://ddragon.leagueoflegends.com/cdn/15.5.1/data/en_US/champion.json", {
@@ -15,12 +16,12 @@ export default async function itemPage () {
     <div className="min-h-screen w-full grid grid-cols-4 justify-items-center gap-5">
       {data.map((champion) => (
           <div className="flex flex-col justify-center items-center w-full h-[300px] border">
-            {/* <Image
-              src={champion.image.sprite}
-              alt={champion.image.full}
-              width={champion.image.w}
-              height={champion.image.h}
-            /> */}
+            <Image
+              src={`${RiotImageLink}${champion.image}`}
+              alt={champion?.image?.full}
+              width={champion?.image?.w}
+              height={champion?.image?.h}
+            />
             <h3>{champion.name}</h3>
             <p>{champion.title}</p>
           </div>
