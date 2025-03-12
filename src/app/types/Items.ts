@@ -1,9 +1,9 @@
-export type ChampionImage = {
-  full: string;
-  sprite: string;
-  group: string;
-  x: number,
-  y: number,
-  w: number,
-  h: number,
+import { ChampionImage } from "./Champion";
+
+export type Item = {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  image: ChampionImage;
 }
