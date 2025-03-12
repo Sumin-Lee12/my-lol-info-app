@@ -1,6 +1,6 @@
 import { ChampionImage } from "./Champion";
 
-export type Champion = {
+export type ChampionRotation = {
   id: string;
   key: string;
   name: string;
