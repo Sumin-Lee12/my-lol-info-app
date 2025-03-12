@@ -29,8 +29,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen grid grid-rows-[1, 1fr]`}
       >
-        <nav>
-          <ul className="flex flex-row justify-between items-center m-5">
+        <nav className="bg-gray-700 text-white mb-5">
+          <ul className="flex flex-row justify-around items-center my-5">
             <li><Link href={"/"}>Home</Link></li>
             <li><Link href={"/champions"}>Champions</Link></li>
             <li><Link href={"/items"}>Items</Link></li>
