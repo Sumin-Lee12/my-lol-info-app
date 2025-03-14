@@ -1,4 +1,4 @@
-import { ChampionImage } from "./Champion";
+import { ImageObject } from "./Champion";
 
 export type ChampionRotation = {
   id: string;
@@ -6,5 +6,5 @@ export type ChampionRotation = {
   name: string;
   title: string;
   blurb: string;
-  image: ChampionImage;
+  image: ImageObject;
 }
