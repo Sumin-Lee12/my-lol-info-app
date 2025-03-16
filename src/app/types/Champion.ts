@@ -20,7 +20,7 @@ export type Champion = {
 
 export type ChampionDetail = {
   id: string;
-  key: string;
+  key: number;
   name: string;
   title: string;
   lore: string;
@@ -28,7 +28,7 @@ export type ChampionDetail = {
     attack: number;
     defense: number;
     magic: number;
-    difficulty: 4;
+    difficulty: number;
   };
   image: ImageObject;
 };

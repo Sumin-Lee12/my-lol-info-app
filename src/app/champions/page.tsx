@@ -5,21 +5,14 @@ import type { Champion } from "../types/Champion";
 import Image from "next/image";
 import { RiotChampionImageLink } from "../components/imageLink";
 import Link from "next/link";
+import { fetchChampionList } from "../utils/serverApi";
 
 export default function ChampionPage() {
   const [data, setData] = useState<Champion[]>([]);
 
   useEffect(() => {
     const fetchChampions = async () => {
-      const res = await fetch(
-        "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json", {
-          next: {
-            revalidate: 86400
-          }
-        }
-      );
-      const json = await res.json();
-      const data: Champion[] = Object.values(json.data);
+      const data = await fetchChampionList();
       setData(data);
     };
     fetchChampions();
@@ -34,7 +27,11 @@ export default function ChampionPage() {
             key={Champion.id}
             className="flex justify-center items-center w-full h-[400px] border-gray-600 border rounded-lg"
           >
-            <Link href={`/champions/${Champion.id}`} className="w-full">
+            <Link
+              id={Champion.id}
+              href={`/champions/${Champion.id}`}
+              className="w-full"
+            >
               <div className="w-full h-[300px] flex flex-col justify-center items-center p-6">
                 <Image
                   src={`${RiotChampionImageLink}${Champion.image.full}`}
