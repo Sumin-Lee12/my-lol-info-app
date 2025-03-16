@@ -1,24 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import type { ChampionRotation } from "../types/ChampionRotation";
+import type { Champion } from "../types/Champion";
 import Image from "next/image";
 import { RiotChampionImageLink } from "../components/imageLink";
 import Link from "next/link";
+import { fetchChampionList } from "../utils/serverApi";
 
 export default function ChampionPage() {
-  const [data, setData] = useState<ChampionRotation[]>([]);
+  const [data, setData] = useState<Champion[]>([]);
 
   useEffect(() => {
-    const fetchChampionRotation = async () => {
-      const res = await fetch(
-        `https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${process.env.RIOT_API_KEY}`
-      );
-      const json = await res.json();
-      const data: ChampionRotation[] = Object.values(json.data);
+    const fetchChampions = async () => {
+      const data = await fetchChampionList();
       setData(data);
     };
-    fetchChampionRotation();
+    fetchChampions();
   }, []);
 
   return (
@@ -30,7 +27,11 @@ export default function ChampionPage() {
             key={Champion.id}
             className="flex justify-center items-center w-full h-[400px] border-gray-600 border rounded-lg"
           >
-            <Link href={`/champions/${Champion.id}`} className="w-full">
+            <Link
+              id={Champion.id}
+              href={`/champions/${Champion.id}`}
+              className="w-full"
+            >
               <div className="w-full h-[300px] flex flex-col justify-center items-center p-6">
                 <Image
                   src={`${RiotChampionImageLink}${Champion.image.full}`}
