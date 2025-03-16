@@ -1,38 +1,52 @@
+// import React from "react";
+// import type { Item } from "../../types/Items";
 // import Image from "next/image";
-// import { ImageObject } from "../../types/Champion"
-// import { RiotItemImageLink } from "@/app/components/imageLink";
+// import { RiotItemImageLink } from "../../components/imageLink";
 
-// type Props = {
-//   params: {
-//     id: string;
-//     key: string;
-//     name: string;
-//     title: string;
-//     image: ImageObject;
-//   }
+// interface ItemIdProps {
+//   params: { id: string };
 // }
 
-// export default async function ItemPage({params}: Props) {
+// const ItemDetailPage = async ({ params }: ItemIdProps) => {
+//   // API 호출로 데이터 가져오기
+//   const res = await fetch(
+//     `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/en_US/${params.id}.json`,
+//     {
+//       cache: "force-cache",
+//     });
+
+//   if (!res.ok) throw new Error("아이템 데이터 가져오기 실패");
+
+//   const Item = await res.json();
+//   const itemDetail: Item[] = Object.values(champion.data);
+
+//   if (!itemDetail) throw new Error("아이템 데이터 가져오기 실패");
+// //
 //   return (
-//     <>
-//     <div className="min-h-screen w-full justify-items-center mx-5">
-//       <h1>{params.name}</h1>
-//       {/* <p>{params.title}</p>
-//       <Image
-//         src={`${RiotItemImageLink}${params.image.full}`}
-//         alt={params.image.full}
-//         width={params.image.w}
-//         height={params.image.h}
-//       /> */}
+//     <div>
+//       <div>champions 상세</div>
+//       {itemDetail.map((champion) => {
+//         return (
+//           <div key={champion.id}>
+//             <Image
+//               src={`${RiotItemImageLink}${champion.image.full}`}
+//               alt={champion.image.full}
+//               width={300}
+//               height={300}
+//             />
+//             <h1>{champion.title}</h1>
+//             <p>{champion.lore}</p>
+//             <div>
+//               <p>{champion.info?.attack}</p>
+//               <p>{champion.info?.defense}</p>
+//               <p>{champion.info?.difficulty}</p>
+//               <p>{champion.info?.magic}</p>
+//             </div>
+//           </div>
+//         );
+//       })}
 //     </div>
-//     </>
 //   );
-// }
+// };
 
-import React from "react";
-
-const ItemsDetailPage = () => {
-  return <div>ItemsDetailPage</div>;
-};
-
-export default ItemsDetailPage;
+// export default ItemDetailPage;

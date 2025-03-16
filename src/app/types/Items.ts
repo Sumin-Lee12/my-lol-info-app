@@ -1,9 +1,14 @@
 import { ImageObject } from "./Champion";
 
 export type Item = {
-  id: string;
-  key: string;
   name: string;
-  title: string;
+  plaintext: string;
+  gold: {
+    base: number;
+    purchasable: boolean;
+    total: number;
+    sell: number;
+  };
+  tags: string;
   image: ImageObject;
 };
