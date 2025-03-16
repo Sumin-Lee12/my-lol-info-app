@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen grid grid-rows-[1, 1fr]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen grid grid-rows-[1, 1fr] bg-black`}
       >
         <nav className="bg-black border-b border-white text-white">
           <ul className="flex flex-row justify-around items-center my-5">
