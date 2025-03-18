@@ -3,13 +3,9 @@ import type { ChampionDetail } from "../../types/Champion";
 import Image from "next/image";
 import { RiotChampionDetailPageImageLink } from "../../components/imageLink";
 import Link from "next/link";
-
-interface ChampionIdProps {
-  params: { id: string };
-}
+import { ChampionIdProps } from "@/app/utils/fetch";
 
 const Champions = async ({ params }: ChampionIdProps) => {
-  // API 호출로 데이터 가져오기
   const res = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion/${params.id}.json`,
     {
@@ -37,13 +33,15 @@ const Champions = async ({ params }: ChampionIdProps) => {
               alt={champion.image.full}
               width={1500}
               height={800}
-              className="absolute top-0 left-0 w-full min-h-fit z-0 opacity-50"
+              className="absolute top-0 left-0 w-full min-h-fit z-0 opacity-60"
             />
-            <div className="z-10">
-              <Link href={"/champions"}>뒤로 가기</Link>
-              <h1>{champion.title}</h1>
-              <p>{champion.lore}</p>
-              <div>
+            <div className="z-10 relative min-h-screen m-10">
+              <button className="py-2 px-3 rounded-md hover:bg-gray-500 text-sm">
+                <Link href={"/champions"}>뒤로 가기</Link>
+              </button>
+              <h1 className="text-[40px] font-black mt-32">{champion.title}</h1>
+              <p className="w-1/2 mt-5">{champion.lore}</p>
+              <div className="flex flex-row mt-16 gap-10">
                 <p>공격력: {champion.info?.attack}</p>
                 <p>방어력: {champion.info?.defense}</p>
                 <p>난이도: {champion.info?.difficulty}</p>
