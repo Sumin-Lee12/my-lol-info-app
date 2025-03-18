@@ -1,8 +1,8 @@
-import type { Item } from "../types/Items";
+import type { Item } from "../../types/Items";
 import Image from "next/image";
-import { RiotItemImageLink } from "../components/imageLink";
+import { RiotItemImageLink } from "../../components/imageLink";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "../loading";
 
 export default async function ItemPage() {
   const res = await fetch(

@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from "react";
-import type { ChampionDetail } from "../types/Champion";
-import { fetchAllChampionList } from "../utils/serverApi";
-import Card from "../components/card";
-import Loading from "../champions/loading";
+import type { ChampionDetail } from "../../types/Champion";
+import { fetchAllChampionList } from "../../utils/serverApi";
+import Card from "../../components/card";
 
 export default function ChampionPage() {
   const [freeChampions, setFreeChampions] = useState<ChampionDetail[]>([]);
@@ -31,14 +30,13 @@ export default function ChampionPage() {
     };
     fetchFreeChampions();
   }, []);
+  if (Math.random() > 0.5) throw new Error("오류다오류!");
 
   return (
     <div className="min-h-screen w-full justify-items-center mx-5">
       <h1 className="font-bold text-[32px] my-20 text-white">챔피언 목록</h1>
       <div className="min-h-screen w-full grid grid-cols-5 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 justify-items-center gap-10">
-        <Suspense fallback={<Loading />}>
-          <Card championDetail={freeChampions} />
-        </Suspense>
+        <Card championDetail={freeChampions} />
       </div>
     </div>
   );

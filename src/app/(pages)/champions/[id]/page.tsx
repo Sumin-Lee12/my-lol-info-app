@@ -1,10 +1,10 @@
 import React from "react";
-import type { ChampionDetail } from "../../types/Champion";
-import { ChampionIdProps } from "../../utils/fetch";
-import { fetchWithDelay } from "../../utils/fetch";
-import ChampionDetailPage from "../../components/detailPage";
+import type { ChampionDetail } from "../../../types/Champion";
+import { ChampionIdProps } from "../../../utils/fetch";
+import { fetchWithDelay } from "../../../utils/fetch";
+import ChampionDetailPage from "../../../components/detailPage";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../../loading";
 
 const Champions = async ({ params }: ChampionIdProps) => {
   const res = await fetchWithDelay(
