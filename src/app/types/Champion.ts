@@ -19,21 +19,6 @@ export type Champion = {
 };
 
 export type ChampionDetail = {
-  id: string;
-  key: number;
-  name: string;
-  title: string;
-  lore: string;
-  info: {
-    attack: number;
-    defense: number;
-    magic: number;
-    difficulty: number;
-  };
-  image: ImageObject;
-};
-
-export type ChampionDetailType = {
   blurb: string;
   id: string;
   image: ImageObject;

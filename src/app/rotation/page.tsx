@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import type { ChampionDetailType } from "../types/Champion";
-import Image from "next/image";
-import { RiotChampionCardImageLink } from "../components/imageLink";
-import Link from "next/link";
+import React, { useState, useEffect, Suspense } from "react";
+import type { ChampionDetail } from "../types/Champion";
 import { fetchAllChampionList } from "../utils/serverApi";
+import { Card } from "../components/card";
+import Loading from "../champions/loading";
 
 export default function ChampionPage() {
   const [freeChampions, setFreeChampions] = useState<ChampionDetailType[]>([]);
@@ -22,7 +21,7 @@ export default function ChampionPage() {
       const allChampionList = await fetchAllChampionList();
 
       const { data: championsData } = allChampionList;
-      const championsArray: ChampionDetailType[] = Object.values(championsData);
+      const championsArray: ChampionDetail[] = Object.values(championsData);
 
       const availableChampions = championsArray.filter((champion) =>
         freeChampionKeys.includes(Number(champion.key))
@@ -37,30 +36,9 @@ export default function ChampionPage() {
     <div className="min-h-screen w-full justify-items-center mx-5">
       <h1 className="font-bold text-[32px] my-20 text-white">챔피언 목록</h1>
       <div className="min-h-screen w-full grid grid-cols-5 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 justify-items-center gap-10">
-        {freeChampions.map((champion) => (
-          <div
-            key={champion.id}
-            className="flex justify-center items-center w-full h-[500px]"
-          >
-            <Link href={`/champions/${champion.id}`} className="w-full">
-              <div className="w-full h-[450px] min-h-[400px] flex flex-col justify-around items-center overflow-hidden bg-yellow-600 pb-2">
-                <div className="w-full h-[400px] overflow-hidden flex justify-center items-center">
-                  <Image
-                    src={`${RiotChampionCardImageLink}${champion.id}_0.jpg`}
-                    alt={champion?.image?.full}
-                    width={`300`}
-                    height={`300`}
-                    className="object-cover scale-110 transition-transform ease-in-out duration-500 hover:scale-125"
-                  />
-                </div>
-                <h3 className="font-bold text-[32px] text-white">
-                  {champion.name}
-                </h3>
-                <p className="text-black">{champion.title}</p>
-              </div>
-            </Link>
-          </div>
-        ))}
+        <Suspense fallback={<Loading />}>
+          <Card championDetail={freeChampions} />
+        </Suspense>
       </div>
     </div>
   );
