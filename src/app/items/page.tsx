@@ -14,23 +14,26 @@ export default async function ItemPage() {
   console.log(data);
 
   return (
-    <div className="min-h-screen w-full justify-items-center mx-5">
+    <div className="min-h-screen w-full justify-items-center mx-5 text-white">
       <h1 className="font-bold text-[32px] my-20">아이템 목록</h1>
-      <div className="min-h-screen w-full grid grid-cols-5 justify-items-center gap-5">
+      <div className="min-h-screen w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2  justify-items-center gap-5">
         {data.map((Item) => (
           <div
             key={Item.name}
-            className="flex justify-center items-center w-full h-[400px] border-gray-600 border rounded-lg"
+            className="flex justify-center items-center w-full h-[180px] border-gray-600 border rounded-lg"
           >
-            <div className="w-full h-[300px] flex flex-col justify-center items-center p-6">
+            <div className="w-full h-[180px] flex flex-col justify-center items-center p-6">
               <Image
                 src={`${RiotItemImageLink}${Item.image.full}`}
                 alt={Item?.image?.full}
-                width={`200`}
-                height={`200`}
+                width={100}
+                height={100}
+                quality={100}
               />
-              <h3 className="font-bold text-[32px]">{Item.name}</h3>
-              <p>{Item.plaintext}</p>
+              <div className="h-5/6">
+                <h3 className="font-bold text-base mt-3">{Item.name}</h3>
+                {/* <p className="text-gray-500">{Item.plaintext}</p> */}
+              </div>
             </div>
           </div>
         ))}

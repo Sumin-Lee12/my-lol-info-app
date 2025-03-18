@@ -52,6 +52,9 @@ export default function page() {
                   <div className="h-[250px] overflow-hidden mb-5">
                     <Image
                       src={card.imageSrc}
+                      width={1920}
+                      height={1080}
+                      quality={100}
                       alt="character image"
                       className="h-[250px] transition-transform ease-in-out duration-500 hover:scale-110"
                     />

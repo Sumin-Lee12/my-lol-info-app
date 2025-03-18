@@ -23,7 +23,7 @@ export default async function ChampionPage() {
             className="flex justify-center items-center w-full h-[500px] border-gray-700 border-2 rounded-lg"
           >
             <Link href={`/champions/${champion.id}`} className="w-full">
-              <div className="w-full h-[300px] flex flex-col justify-center items-center">
+              <div className="w-full h-[500px] flex flex-col justify-center items-center overflow-hidden">
                 <Image
                   src={`${RiotChampionCardImageLink}${champion.id}_0.jpg`}
                   alt={champion?.image?.full}
