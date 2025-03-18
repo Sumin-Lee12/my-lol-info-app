@@ -19,6 +19,7 @@ export type Champion = {
 };
 
 export type ChampionDetail = {
+  lore: string;
   blurb: string;
   id: string;
   image: ImageObject;
