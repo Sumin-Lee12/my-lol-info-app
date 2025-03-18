@@ -1,42 +1,28 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import type { ChampionDetail, ChampionDetailType } from "../types/Champion";
-import { apiKey } from "../api/api-key";
+import type { ChampionDetailType } from "../types/Champion";
 import Image from "next/image";
 import { RiotChampionCardImageLink } from "../components/imageLink";
 import Link from "next/link";
-import { fetchChampionList, fetchAllChampionList } from "../utils/serverApi";
-
-// type championRotation = {
-//   freeChampionIds: number[];
-//   freeChampionIdsForNewPlayers: number[];
-//   maxNewPlayerLevel: number;
-// };
+import { fetchAllChampionList } from "../utils/serverApi";
 
 export default function ChampionPage() {
-  const [freeChampionKeys, setFreeChampionKeys] = useState<number[]>([]);
   const [freeChampions, setFreeChampions] = useState<ChampionDetailType[]>([]);
 
-  const apiKey = process.env.RIOT_API_KEY;
-
   useEffect(() => {
+    const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
+
     const fetchFreeChampions = async () => {
       const res = await fetch(
         `https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`
       );
       const data = await res.json();
-      console.log("this is data", data);
-
       const freeChampionKeys: number[] = data.freeChampionIds;
-      console.log("this is the FreeChampionKeys ==> ", freeChampionKeys);
-      setFreeChampionKeys(freeChampionKeys);
-
       const allChampionList = await fetchAllChampionList();
-      console.log("allChampionList==+>", allChampionList);
 
       const { data: championsData } = allChampionList;
-      const championsArray: number[] = Object.values(championsData);
+      const championsArray: ChampionDetailType[] = Object.values(championsData);
 
       const availableChampions = championsArray.filter((champion) =>
         freeChampionKeys.includes(Number(champion.key))
@@ -46,24 +32,6 @@ export default function ChampionPage() {
     };
     fetchFreeChampions();
   }, []);
-
-  //-----------
-  // export default async function ChampionPage() {
-  //   const res = await fetch(
-  //     `https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-6b9ebb19-f869-4831-a57c-fc17e7055dda`,
-  //     {
-  //       cache: "no-store",
-  //     }
-  //   );
-  //   const championRotation = await res.json();
-
-  //   const allChampionList = await fetchChampionList();
-
-  //   const availableChampions: ChampionRotation[] = allChampionList.filter(
-  //     (champion) => championRotation.freeChampionIds.includes(champion.id)
-  //   );
-  //   console.log("thsisi the available CHamptions====> ", availableChampions);
-  //-------------
 
   return (
     <div className="min-h-screen w-full justify-items-center mx-5">
@@ -76,12 +44,14 @@ export default function ChampionPage() {
           >
             <Link href={`/champions/${champion.id}`} className="w-full">
               <div className="w-full h-[500px] flex flex-col justify-center items-center overflow-hidden">
-                <Image
-                  src={`${RiotChampionCardImageLink}${champion.id}_0.jpg`}
-                  alt={champion?.image?.full}
-                  width={`200`}
-                  height={`200`}
-                />
+                <div className="h-[100%]">
+                  <Image
+                    src={`${RiotChampionCardImageLink}${champion.id}_0.jpg`}
+                    alt={champion?.image?.full}
+                    width={`250`}
+                    height={`250`}
+                  />
+                </div>
                 <h3 className="font-bold text-[32px] text-white mt-5">
                   {champion.name}
                 </h3>
