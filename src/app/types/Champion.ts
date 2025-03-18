@@ -11,7 +11,7 @@ export type ImageObject = {
 
 export type Champion = {
   id: string;
-  key: string;
+  key: number;
   name: string;
   title: string;
   blurb: string;
@@ -31,4 +31,29 @@ export type ChampionDetail = {
     difficulty: number;
   };
   image: ImageObject;
+};
+
+export type ChampionDetailType = {
+  blurb: string;
+  id: string;
+  image: ImageObject;
+  info: {
+    attack: number;
+    defense: number;
+    magic: number;
+    difficulty: number;
+  };
+  key: number;
+  name: string;
+  partype: string;
+  stats: {
+    hp: number;
+    hpperlevel: number;
+    mp: number;
+    mpperlevel: number;
+    movespeed: number;
+  };
+  tags: string[];
+  title: string;
+  version: string;
 };
