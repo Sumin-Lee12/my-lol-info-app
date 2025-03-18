@@ -1,4 +1,4 @@
-import type { Champion, ChampionDetailType } from "../types/Champion";
+import type { Champion } from "../types/Champion";
 
 export const fetchChampionList = async () => {
   const res = await fetch(
