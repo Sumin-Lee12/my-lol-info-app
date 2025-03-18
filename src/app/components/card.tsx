@@ -3,7 +3,7 @@ import { RiotChampionCardImageLink } from "../components/imageLink";
 import Link from "next/link";
 import type { Champion, ChampionDetail } from "../types/Champion";
 
-export const Card = ({
+const Card = ({
   championDetail,
 }: {
   championDetail: Champion[] | ChampionDetail[];
@@ -37,3 +37,5 @@ export const Card = ({
     </>
   );
 };
+
+export default Card;

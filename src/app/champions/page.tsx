@@ -1,7 +1,7 @@
 import type { Champion } from "../types/Champion";
 import { Suspense } from "react";
 import Loading from "./loading";
-import { Card } from "../components/card";
+import Card from "../components/card";
 
 export default async function ChampionPage() {
   const res = await fetch(

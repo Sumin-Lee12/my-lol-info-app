@@ -3,11 +3,11 @@
 import React, { useState, useEffect, Suspense } from "react";
 import type { ChampionDetail } from "../types/Champion";
 import { fetchAllChampionList } from "../utils/serverApi";
-import { Card } from "../components/card";
+import Card from "../components/card";
 import Loading from "../champions/loading";
 
 export default function ChampionPage() {
-  const [freeChampions, setFreeChampions] = useState<ChampionDetailType[]>([]);
+  const [freeChampions, setFreeChampions] = useState<ChampionDetail[]>([]);
 
   useEffect(() => {
     const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
