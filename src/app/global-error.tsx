@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { startTransition } from "react";
-import errorPageImage from "../public/404-page-not-found-1-86.svg";
+import errorPageImage from "./public/404-page-not-found-1-86.svg";
 import Image from "next/image";
 
 export default function Error({
