@@ -29,11 +29,10 @@ LoL Info App은 리그 오브 레전드(LoL)의 간단한 정보들을 확인할
       <img width="1400" alt="스크린샷 2025-03-19 오후 12 54 06" src="https://github.com/user-attachments/assets/f399f105-9cae-4303-adbb-496fe1ca09cc" />
 
 ## ⚙ 프로젝트 기능
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=Next.js&logoColor=white">
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=Riot Games API&logoColor=red">
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=TanStack Query&logoColor=yellow">
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=Tailwind CSS&logoColor=green">
-<img src="https://img.shields.io/badge/표시할이름-색상?style=for-the-badge&logo=Fetch API&logoColor=blue">
+<img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=Next.js&logoColor=white">
+<img src="https://img.shields.io/badge/RiotGames-red?style=for-the-badge&logo=Riot Games&logoColor=red">
+<img src="https://img.shields.io/badge/tailwindcss-green?style=for-the-badge&logo=tailwindcss&logoColor=green">
+<img src="https://img.shields.io/badge/FetchAPI-blue?style=for-the-badge&logo=Fetch API&logoColor=blue">
 
 ## 렌더링 기법
 - **SSG**: 아이템 목록 페이지
