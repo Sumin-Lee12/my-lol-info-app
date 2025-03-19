@@ -5,8 +5,8 @@ import homepgImg from "./public/lol-bg.jpg";
 
 export default function page() {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="relative min-w-screen h-screen flex- justify-center items-center">
+    <div className="min-w-full flex flex-col justify-center items-center">
+      <div className="relative min-w-full h-screen flex justify-center items-center">
         <Image
           src={homepgImg}
           alt="LoL Home Image"
