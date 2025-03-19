@@ -45,3 +45,7 @@ LoL Info App은 리그 오브 레전드(LoL)의 간단한 정보들을 확인할
 배포 시 환경 변수 설정을 잘못하여 발생한 에러를 수정하는 과정이 있었습니다. `.env` 파일을 정확하게 작성하고, 배포 환경에 맞는 설정을 해주는 것이 얼마나 중요한지 다시 한 번 느꼈습니다.
 
 ## 📁 프로젝트 구조
+
+📦 
+nextjs-riot-app ├── .github ├── public └── src ├── app │ ├── api/rotation │ ├── pages │ │ └── [id] │ ├── items │ ├── rotation │ ├── error.tsx │ ├── globals.css │ ├── layout.tsx │ ├── loading.tsx │ ├── error.tsx │ └── page.tsx ├── components │ │ ├── champion-card.tsx │ ├── champion-list.tsx │ │ └── item-card.tsx │ └── layouts │ └── header ├── config ├── constants ├── api │ └── utils └── types
+
