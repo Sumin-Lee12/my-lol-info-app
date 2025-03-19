@@ -27,8 +27,9 @@ const ChampionDetailPage = ({
               <button className="py-2 px-3 rounded-md hover:bg-gray-500 text-sm">
                 <Link href={"/champions"}>뒤로 가기</Link>
               </button>
-              <h1 className="text-[40px] font-black mt-32">{champion.title}</h1>
-              <p className="w-1/2 mt-5">{champion.lore}</p>
+              <h1 className="text-[50px] font-black mt-32">{champion.id}</h1>
+              <h2 className="text-[32px] font-thin">{champion.title}</h2>
+              <p className="w-1/2 mt-8">{champion.lore}</p>
               <div className="flex flex-row mt-16 gap-10">
                 <p>공격력: {champion.info?.attack}</p>
                 <p>방어력: {champion.info?.defense}</p>
