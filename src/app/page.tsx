@@ -1,37 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import characterImage from "./public/lolCharacter.jpg";
-import characterRotationImage from "./public/lolChampion.jpg";
-import itemImage from "./public/lolItems.webp";
-import homepageImage from "./public/lol-hompg-img.jpg";
-
-const linkArray = [
-  {
-    id: 1,
-    href: "/champions",
-    imageSrc: characterRotationImage,
-    title: "챔피언 목록보기",
-  },
-  {
-    id: 2,
-    href: "/items",
-    imageSrc: itemImage,
-    title: "아이템 목록보기",
-  },
-  {
-    id: 2,
-    href: "/rotation",
-    imageSrc: characterImage,
-    title: "이번 주 무료 챔피언 목록보기",
-  },
-];
+import { linkArray } from "./homePageLinkData";
+import homepgImg from "./public/lol-bg.jpg";
 
 export default function page() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="relative w-screen h-screen">
         <Image
-          src={homepageImage}
+          src={homepgImg}
           alt="LoL Home Image"
           className="w-full h-full object-cover"
         />
@@ -48,7 +25,7 @@ export default function page() {
               className="text-white mt-48 w-[400px] h-[300px] mb-60"
             >
               <Link href={card.href}>
-                <div className="justify-items-center mb-60">
+                <div className="justify-items-center mb-60 bg-gray-900 pb-5">
                   <div className="h-[250px] overflow-hidden mb-5">
                     <Image
                       src={card.imageSrc}
