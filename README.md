@@ -46,6 +46,3 @@ LoL Info App은 리그 오브 레전드(LoL)의 간단한 정보들을 확인할
 
 ## 📁 프로젝트 구조
 
-📦 
-nextjs-riot-app ├── .github ├── public └── src ├── app │ ├── api/rotation │ ├── pages │ │ └── [id] │ ├── items │ ├── rotation │ ├── error.tsx │ ├── globals.css │ ├── layout.tsx │ ├── loading.tsx │ ├── error.tsx │ └── page.tsx ├── components │ │ ├── champion-card.tsx │ ├── champion-list.tsx │ │ └── item-card.tsx │ └── layouts │ └── header ├── config ├── constants ├── api │ └── utils └── types
-
