@@ -32,20 +32,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen grid grid-rows-[1, 1fr] bg-black`}
       >
-        <nav className="bg-black border-b border-white text-white">
-          <ul className="flex flex-row justify-around items-center my-5">
-            <li>
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link href={"/champions"}>Champions</Link>
-            </li>
-            <li>
-              <Link href={"/items"}>Items</Link>
-            </li>
-            <li>
-              <Link href={"/rotation"}>Rotation</Link>
-            </li>
+        <nav className="bg-black border-b border-gray-700 text-white">
+          <ul className="flex flex-row justify-around items-center">
+            <Link href={"/"}>
+              <li className="py-2 px-32 hover:bg-gray-700">Home</li>
+            </Link>
+            <Link href={"/champions"}>
+              <li className="py-2 px-32 hover:bg-gray-700">Champions</li>
+            </Link>
+            <Link href={"/items"}>
+              <li className="py-2 px-32 hover:bg-gray-700">Items</li>
+            </Link>
+            <Link href={"/rotation"}>
+              <li className="py-2 px-32 hover:bg-gray-700">Rotation</li>
+            </Link>
           </ul>
         </nav>
         <div className="min-h-screen w-full flex justify-center items-center">
