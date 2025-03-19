@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { linkArray } from "./homePageLinkData";
+import { linkArray } from "./components/homePageLinkData";
 import homepgImg from "./public/lol-bg.jpg";
 
 export default function page() {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="relative w-screen h-screen">
+      <div className="relative min-w-screen h-screen flex- justify-center items-center">
         <Image
           src={homepgImg}
           alt="LoL Home Image"
@@ -26,7 +26,7 @@ export default function page() {
             >
               <Link href={card.href}>
                 <div className="justify-items-center mb-60 bg-gray-900 pb-5">
-                  <div className="h-[250px] overflow-hidden mb-5">
+                  <div className="h-[250px] min-w-screen  overflow-hidden mb-5">
                     <Image
                       src={card.imageSrc}
                       width={1920}

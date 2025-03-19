@@ -23,7 +23,7 @@ const Card = ({
                   alt={champion?.image?.full}
                   width={`300`}
                   height={`300`}
-                  className="object-cover scale-110 transition-transform ease-in-out duration-500 hover:scale-125"
+                  className="object-cover transition-transform ease-in-out duration-500 hover:scale-125"
                 />
               </div>
               <h3 className="font-bold text-[32px] text-white mt-2">

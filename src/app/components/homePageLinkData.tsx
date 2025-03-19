@@ -1,6 +1,6 @@
-import characterImage from "./public/lolCharacter.jpg";
-import characterRotationImage from "./public/lolChampion.jpg";
-import itemImage from "./public/lolItems.webp";
+import characterImage from "../public/lolCharacter.jpg";
+import characterRotationImage from "../public/lolChampion.jpg";
+import itemImage from "../public/lolItems.webp";
 
 export const linkArray = [
   {
