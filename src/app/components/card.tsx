@@ -16,7 +16,7 @@ const Card = ({
           className="flex justify-center items-center w-full h-[500px]"
         >
           <Link href={`/champions/${champion.id}`} className="w-full">
-            <div className="w-full h-[450px] min-h-[400px] flex flex-col justify-around items-center overflow-hidden bg-yellow-600 pb-2">
+            <div className="w-full h-[450px] min-h-[400px] flex flex-col justify-around items-center overflow-hidden bg-gray-800 pb-3">
               <div className="w-full h-[400px] overflow-hidden flex justify-center items-center">
                 <Image
                   src={`${RiotChampionCardImageLink}${champion.id}_0.jpg`}
@@ -26,10 +26,10 @@ const Card = ({
                   className="object-cover scale-110 transition-transform ease-in-out duration-500 hover:scale-125"
                 />
               </div>
-              <h3 className="font-bold text-[32px] text-white">
+              <h3 className="font-bold text-[32px] text-white mt-2">
                 {champion.name}
               </h3>
-              <p className="text-black">{champion.title}</p>
+              <p className="text-gray-500">{champion.title}</p>
             </div>
           </Link>
         </div>
