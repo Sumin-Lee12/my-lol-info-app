@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import type { ChampionDetail } from "../../types/Champion";
 import { fetchAllChampionList } from "../../utils/serverApi";
 import Card from "../../components/card";
